@@ -1,0 +1,249 @@
+@import "../../vendor/compass/_compass.scss";
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  height:100%;
+  overflow: hidden;
+}
+
+h1,h2,h3,h4{
+  font-family: 'Abel', sans-serif;
+  font-weight: 600;
+  color:white;
+  text-shadow: 0px 1px 1px black;
+  text-transform: uppercase;
+}
+
+h2,h3{
+  text-align: center;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height:100%;
+  margin-left:-10px
+}
+
+.mapbox-info-toggle,
+.leaflet-control-zoom{
+  display: none;
+}
+
+
+main {
+  @include display-box;
+  @include box-align(stretch);
+  @include box-orient(horizontal);
+  height:100%;
+  width: 100%;
+  #menublock{
+    height:100%;
+    width: 50px;
+    position:relative;
+    z-index: 2;
+    @include box-sizing(border-box);
+  }
+  #middleblock{
+    border-left: 1px solid #121212;
+    box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0 inset;
+    width: 200px;
+    background: #383838;
+    margin-left:-200px;
+    position:relative;
+    padding:10px;
+    color:white;
+    overflow-y:scroll;
+    @include box-sizing(border-box);
+    @include transition-property(margin-left);
+    @include transition-duration(0.2s);
+    &.open{
+      margin-left:0px;
+    }
+  }
+  #mainblock{
+    border-left: 1px solid #121212;
+    box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0 inset;
+    background-color: lightgray;
+    @include box-flex(1);
+    position:relative;
+    padding:10px;
+    @include box-sizing(border-box);
+  }
+}
+
+
+#myChart{
+  background: rgba(41, 41, 41, 0.9);
+
+  position: relative;
+
+  right:-110%;
+  height:500px;
+
+  @include transition-property(right);
+  @include transition-duration(0.3s);
+
+  &.show{
+    right:0%;
+  }
+
+  #closeChart{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 10px;
+    color: white;
+    font-size:25px;
+    text-shadow: 0px 1px 1px black;
+    &:hover{
+      color: black;
+    }
+  }
+}
+
+ul#menutabs{
+  display: block;
+  @include display-box;
+  @include box-align(stretch);
+  @include box-orient(vertical);
+  @include reset-box-model;
+  height:100%;
+  background: #2F2F2F;
+  li{
+    @include reset-box-model;
+    display: block;
+    position: relative;
+    &.icontab{
+      height:30px;
+      text-align: center;
+      a{
+        color:white;
+        i{
+          font-size:30px;
+          text-shadow: 0px 1px 1px black;
+        }
+      }
+    }
+    &:not(.icontab){
+      @include box-flex(1);
+    }
+    &.spacer{
+      -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0 inset;
+      border-top: 1px solid #121212;
+      margin:0px 10px;
+    }
+    &.active:after,
+    &.active:before {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &.active:after {
+      border-color: rgba(40, 35, 47, 0);
+      border-left-color: #2F2F2F;
+      border-width: 8px;
+      margin-top: -8px;
+    }
+    &.active:before {
+      border-color: rgba(11, 18, 11, 0);
+      border-left-color: #121212;
+      border-width: 9px;
+      margin-top: -9px;
+    }
+  }
+
+}
+
+
+.devider{
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid #121212;
+}
+
+.devider-form{
+  margin:10px 0px;
+}
+
+
+
+#bayPredict{
+  color: rgb(105, 222, 252);
+  strong{
+    color:white;
+  }
+}
+
+
+#searchform{
+  display: none;
+}
+
+
+
+.fadeOut {
+  opacity:0;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-top:10px;
+}
+
+/* MAPBOX OVERRIDES */
+
+
+
+.leaflet-popup-content{
+  background: transparent;
+  border-color:transparent;
+  padding: 0px;
+  color:white;
+  font-size: 12px;
+  .bayLinksInfo:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.leaflet-popup-close-button{
+  display: none;
+}
+.leaflet-popup-content-wrapper{
+  background: transparent;
+  border-color:transparent;
+  padding: 0px;
+}
+.leaflet-popup-tip {
+  border-top: 10px solid #39B3D7;
+  margin-top:-1px;
+}
+.leaflet-control-geosearch{
+  display: none;
+}
+
+.popup_buttons{
+
+}
+.popup_data{
+  display: none;
+  background: white;
+  color: #333;
+  padding:5px;
+  border-radius: 3px;
+  line-height: normal;
+  border: 1px solid #39b3d7;
+}

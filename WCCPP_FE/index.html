@@ -18,25 +18,455 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World!</title>
+<head>
+    
+    <!-- meta -->
+    <title>Services Dev for WCCPP</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- end meta -->
+        
+    <!-- external googlefont -->
+    <link  href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <!-- end googlefont -->
+
+    <!-- vendor jquery -->
+    <script src="vendor/jquery/jquery-2.1.0.min.js"></script>
+    <!-- end jquery -->
+
+    <!-- vendor rapheal -->
+    <script src="vendor/raphael/raphael-min.js"></script>
+    <!-- end charts -->
+
+    <!-- vendor morris -->
+    <script src="vendor/morris/morris.js"></script>
+    <link   rel="stylesheet" href="vendor/morris/morris.css" />
+    <!-- end morris -->
+
+    <!-- vendor moment -->
+    <script src="vendor/moment/moment.min.js"></script>
+    <!-- end moment -->
+
+    <!-- vendor mapbox -->
+    <script src='vendor/mapbox/mapbox.js'></script>
+    <link  href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
+    <!-- end mapbox -->
+
+    <!-- vendor leafletmarkercluster -->
+    <script src="vendor/leaflet/leaflet.markercluster-src.js"></script>
+    <link   rel="stylesheet" href="vendor/leaflet/MarkerCluster.css" />
+    <link   rel="stylesheet" href="vendor/leaflet/MarkerCluster.Default.css" />
+    <!-- end leafletmarkercluster -->
+
+    <!-- vendor GeoSearch -->
+    <script src="vendor/GeoSearch/js/l.control.geosearch.js"></script>
+    <script src="vendor/GeoSearch/js/l.geosearch.provider.bing.js"></script>
+    <script src="vendor/GeoSearch/js/l.geosearch.provider.openstreetmap.js"></script>
+    <link   rel="stylesheet" href="vendor/GeoSearch/css/l.geosearch.css" />
+    <!-- end GeoSearch -->
+
+    <!-- vendor leafletroutingmachine -->
+    <script src="vendor/leaflet-routing-machine/leaflet-routing-machine.min.js"></script>
+    <link   rel="stylesheet" href="vendor/leaflet-routing-machine/leaflet-routing-machine.css" />
+    <!-- end leafletroutingmachine -->
+
+    <!-- vendor bootstrap-messenger.js -->
+    <script src="vendor/messenger/js/messenger.js"></script>
+    <script src="vendor/messenger/js/messenger-theme-flat.js"></script>
+    <link   rel="stylesheet" href="vendor/messenger/css/messenger.css" />
+    <link   rel="stylesheet" href="vendor/messenger/css/messenger-theme-flat.css" />
+    <!-- end messenger -->
+
+    <!-- CDN bootstrap -->
+    <link  href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link  href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- end bootstrap -->
+
+    <!-- vendor bootstrapselect -->
+    <script src="vendor/bootstrap-select/bootstrap-select.min.js"></script>
+    <link   rel="stylesheet" href="vendor/bootstrap-select/bootstrap-select.min.css" />
+    <!-- end bootstrapselect -->
+
+    <!-- vendor bootstrapdatepicker -->
+    <script src="vendor/jquery-dateselect/dateSelectBoxes.js"></script>
+    <!-- end daterangepicker -->
+
+    <!-- asset maincss -->
+    <link   rel="stylesheet" href="assets/css/main.css">
+    <!-- end maincss -->
+    
+    <!-- asset cordovacss --> 
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!-- asset cordovacss -->
+    
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    
+<body class="">
+
+    <!-- markup main -->
+    <main>
+
+        <!-- markup menublock -->
+        <div id="menublock" class="">
+            <ul class="" id="menutabs">
+                <li></li>
+                    <li class="active icontab"><a href="#a" id="t_a" data-toggle="tab"><i class="fa fa-search"></i></a></li>
+                <li></li>
+                <li class="spacer"></li>
+                    <li class="disabled icontab"><a href="#b" id="t_b" data-toggle="tab"><i class="fa fa-map-marker"></i></a></li>
+                <li></li>
+                <li class="spacer"></li>
+                    <li class="disabled icontab"><a href="#d" id="t_d" data-toggle="tab"><i class="fa fa-bar-chart-o"></i></a></li>
+                <li></li>
+                <li class="spacer"></li>
+                    <li class="disabled icontab"><a href="#c" id="t_c" data-toggle="tab"><i class="fa fa-info"></i></a></li>
+                <li></li>
+            </ul>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
+        <!-- end menublock -->
+
+        <!-- markup middleblock -->
+        <div id="middleblock" class="tab-content" data-open="false">
+
+            <!-- markup a -->
+            <div class="tab-pane fade in active" id="a">
+
+                <!-- markup h2 -->
+                <h2>Search using</h2>
+                <!-- end h2 -->
+
+                <div class="devider devider-form"></div>
+
+                <label for="searchPostcode">Postcode</label>
+                <input type="text" class="form-control input-sm"  id="searchPostcode" name="searchPostcode" placeholder="Text input" value="SW1Y 4TE">
+
+                <div class="devider devider-form"></div>
+
+                <label for="searchLat">Lat / Northing</label>
+                <input type="text" class="form-control input-sm"  id="searchLat" name="searchLat" placeholder="Text input" value="51.48989012">
+                
+                <label for="searchLng">Long / Easting</label>
+                <input type="text" class="form-control input-sm"  id="searchLng" name="searchLng" placeholder="Text input" value="-.14156960">
+
+                <div class="devider devider-form"></div>
+
+                <label for="searchBay">Bay ID</label>
+                <input type="text" class="form-control input-sm"  id="searchBay" name="searchBay" placeholder="Text input" value="100">
+
+                <!-- markup h2 -->
+                <h2>On date</h2>
+                <!-- end h2 -->
+
+                <div class="devider devider-form"></div>
+                
+                <label for="searchMonth">Month</label>
+                <select class="form-control input-sm" id="searchMonth" name="searchMonth">
+                    <option label="January" value="01">January</option>
+                    <option label="February" value="02">February</option>
+                    <option label="March" value="03">March</option>
+                    <option label="April" value="04">April</option>
+                    <option label="May" value="05">May</option>
+                    <option label="June" value="06">June</option>
+                    <option label="July" value="07">July</option>
+                    <option label="August" value="08">August</option>
+                    <option label="September" value="09">September</option>
+                    <option label="October" value="10">October</option>
+                    <option label="November" value="11">November</option>
+                    <option label="December" value="12">December</option>
+                </select> 
+
+                <label for="searchDay">Day</label>
+                <select class="form-control input-sm" id="searchDay" name="searchDay">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select> 
+
+                <div class="devider devider-form"></div>
+
+                <label for="searchHour">Hour</label>
+                <select class="form-control input-sm" id="searchHour" name="searchHour">
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select> 
+
+                <label for="searchMin">Hour</label>
+                <select class="form-control input-sm" id="searchMin" name="searchMin">
+                    <option value="00">00</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select> 
+
+                <div class="devider devider-form"></div>
+                <div class="form-group">
+                    <button id="timesearchbutton" class="btn btn-primary btn-xs">Find <i class="fa fa-refresh fa-spin loader"></i></button>
+                </div>
+
+            </div>
+            <!-- end a -->
+
+            <!-- markup b -->
+            <div class="tab-pane fade" id="b">
+
+                <!-- markup h2 -->
+                <h2>Bay Info</h2>
+                <!-- end h2 -->
+
+                <div class="devider devider-form"></div>
+
+                <!-- markup palceholder -->
+                <div class="alert alert-danger placeholder">Please <strong>select a bay</strong> from the map</div>
+                <!-- end palceholder -->
+
+                <!-- markup bayInfo -->
+                <div id="bayPredict"></div>
+                <!-- end bayInfo -->
+
+                <div class="devider devider-form"></div>
+
+                <!-- markup bayInfo -->
+                <div id="bayInfo"></div>
+                <!-- end bayInfo -->
+
+            </div>
+            <!-- end b -->
+
+            <!-- markup c -->
+            <div class="tab-pane fade" id="c">
+
+
+                <!-- markup h2 -->
+                <h2>About</h2>
+                <!-- end h2 -->
+
+                <div class="devider devider-form"></div>
+
+                <p>How it works</p>
+                <p>Data sources</p>
+                <p>The hub</p>
+                <p>prediction technique</p>
+
+                <div class="devider devider-form"></div>
+
+            </div>
+            <!-- end c -->
+
+            <!-- markup c -->
+            <div class="tab-pane fade" id="d">
+
+                <!-- markup h2 -->
+                <h2>Bay History</h2>
+                <!-- end h2 -->
+
+                <div class="devider devider-form"></div>
+
+                <!-- markup palceholder -->
+                <div class="alert alert-danger placeholder">Please <strong>select a bay</strong> from the map</div>
+                <!-- end palceholder -->
+
+                <!-- markup searchform -->
+                <div id="searchform">
+
+                    <label for="birthMonth">Month</label>
+                    <select class="form-control input-sm" id="birthMonth" name="birthMonth">
+                        <option label="January" value="1">January</option>
+                        <option label="February" value="2">February</option>
+                        <option label="March" value="3">March</option>
+                        <option label="April" value="4">April</option>
+                        <option label="May" value="5">May</option>
+                        <option label="June" value="6">June</option>
+                        <option label="July" value="7">July</option>
+                        <option label="August" value="8">August</option>
+                        <option label="September" value="9">September</option>
+                        <option label="October" value="10">October</option>
+                        <option label="November" value="11">November</option>
+                        <option label="December" value="12">December</option>
+                    </select> 
+
+                    <label for="birthDay">Day</label>
+                    <select class="form-control input-sm" id="birthDay" name="birthDay">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select> 
+
+                    <label for="birthYear">Year</label>
+                    <select class="form-control input-sm" id="birthYear" name="birthYear">
+                        <option label="2013" value="2013">2013</option>
+                    </select> 
+                   
+                    <div class="devider devider-form"></div>
+
+                    <!-- HIDDEN FOR NOW
+                    
+                    <label for="search-type">Search type</label>
+                    <select class="form-control input-sm" id="search-type" name="search-type">
+                        <option value="single">Single</option>
+                        <option value="2">Repeat</option>
+                    </select>
+               
+                    <label for="search-weekday">Weekday</label>
+                    <select class="form-control input-sm" id="search-weekday" name="search-weekday">
+                        <option value="alldays">All days</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                        <option value="7">Sunday</option>
+                        <option value="weekdays">Week days</option>
+                        <option value="weekend">Weekends</option>
+                    </select>
+              
+                    <label for="search-length">Length</label>
+                    <select class="form-control input-sm" id="search-length" name="search-length">
+                        <option value="1">Week</option>
+                        <option value="2">Month</option>
+                        <option value="3">Year</option>
+                    </select>
+
+                    -->
+              
+                    <div class="form-group">
+                        <button id="baysearchbutton" class="btn btn-primary btn-xs">Search <i class="fa fa-refresh fa-spin loader"></i></button>
+                    </div>
+
+                </div>
+                <!-- end searchform -->
+
+            </div>
+            <!-- end d -->
+
+        </div>
+        <!-- end middleblock -->
+
+        <!-- markup mainblock -->
+        <div id="mainblock" class="">
+
+            <!-- JS markup map -->
+            <div id='map'></div>
+            <!-- end map -->
+
+            <!-- JS morris markup myChart -->
+            <div id="myChart"  ></div>
+            <!-- end myChart -->
+
+        </div>
+        <!-- end mainblock -->
+
+    </main>
+    <!-- end main -->
+
+    <!-- markup footer -->
+    <footer>
+
+	<!-- JS markup deviceready -->
+	<div id="deviceready" class="blink">
+	    <p class="event listening">Connecting to Device</p>
+	    <p class="event received">Device is Ready</p>
+	</div>
+	<!-- end deviceready -->
+
+	<!-- asset cordovajs -->
+	<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
-    </body>
+	<!-- end cordovajs -->
+
+        <!-- asset mapsjs -->
+        <script src="assets/scripts/maps.js" type="text/javascript"></script>
+        <!-- end mapsjs -->
+
+        <!-- asset uifx -->
+        <script src="assets/scripts/main.js" type="text/javascript"></script>
+        <!-- end uifx -->
+
+    </footer>
+    <!-- end footer -->
+
+</body>
 </html>

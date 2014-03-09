@@ -1,0 +1,314 @@
+/* line 4, ../sass/main.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 13, ../sass/main.scss */
+h1, h2, h3, h4 {
+  font-family: "Abel", sans-serif;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0px 1px 1px black;
+  text-transform: uppercase;
+}
+
+/* line 21, ../sass/main.scss */
+h2, h3 {
+  text-align: center;
+}
+
+/* line 25, ../sass/main.scss */
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: -10px;
+}
+
+/* line 35, ../sass/main.scss */
+.mapbox-info-toggle,
+.leaflet-control-zoom {
+  display: none;
+}
+
+/* line 40, ../sass/main.scss */
+main {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  box-orient: horizontal;
+  height: 100%;
+  width: 100%;
+}
+/* line 46, ../sass/main.scss */
+main #menublock {
+  height: 100%;
+  width: 50px;
+  position: relative;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 53, ../sass/main.scss */
+main #middleblock {
+  border-left: 1px solid #121212;
+  box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0 inset;
+  width: 200px;
+  background: #383838;
+  margin-left: -200px;
+  position: relative;
+  padding: 10px;
+  color: white;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition-property: margin-left;
+  -moz-transition-property: margin-left;
+  -o-transition-property: margin-left;
+  transition-property: margin-left;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 66, ../sass/main.scss */
+main #middleblock.open {
+  margin-left: 0px;
+}
+/* line 70, ../sass/main.scss */
+main #mainblock {
+  border-left: 1px solid #121212;
+  box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0 inset;
+  background-color: lightgray;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  position: relative;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 82, ../sass/main.scss */
+#myChart {
+  background: rgba(41, 41, 41, 0.9);
+  position: relative;
+  right: -110%;
+  height: 500px;
+  -webkit-transition-property: right;
+  -moz-transition-property: right;
+  -o-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 93, ../sass/main.scss */
+#myChart.show {
+  right: 0%;
+}
+/* line 97, ../sass/main.scss */
+#myChart #closeChart {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 10px;
+  color: white;
+  font-size: 25px;
+  text-shadow: 0px 1px 1px black;
+}
+/* line 105, ../sass/main.scss */
+#myChart #closeChart:hover {
+  color: black;
+}
+
+/* line 111, ../sass/main.scss */
+ul#menutabs {
+  display: block;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  -webkit-box-align: stretch;
+  -moz-box-align: stretch;
+  -ms-box-align: stretch;
+  box-align: stretch;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  background: #2F2F2F;
+}
+/* line 119, ../sass/main.scss */
+ul#menutabs li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  position: relative;
+}
+/* line 123, ../sass/main.scss */
+ul#menutabs li.icontab {
+  height: 30px;
+  text-align: center;
+}
+/* line 126, ../sass/main.scss */
+ul#menutabs li.icontab a {
+  color: white;
+}
+/* line 128, ../sass/main.scss */
+ul#menutabs li.icontab a i {
+  font-size: 30px;
+  text-shadow: 0px 1px 1px black;
+}
+/* line 134, ../sass/main.scss */
+ul#menutabs li:not(.icontab) {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+}
+/* line 137, ../sass/main.scss */
+ul#menutabs li.spacer {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0 inset;
+  border-top: 1px solid #121212;
+  margin: 0px 10px;
+}
+/* line 143, ../sass/main.scss */
+ul#menutabs li.active:after, ul#menutabs li.active:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+/* line 153, ../sass/main.scss */
+ul#menutabs li.active:after {
+  border-color: rgba(40, 35, 47, 0);
+  border-left-color: #2F2F2F;
+  border-width: 8px;
+  margin-top: -8px;
+}
+/* line 159, ../sass/main.scss */
+ul#menutabs li.active:before {
+  border-color: rgba(11, 18, 11, 0);
+  border-left-color: #121212;
+  border-width: 9px;
+  margin-top: -9px;
+}
+
+/* line 170, ../sass/main.scss */
+.devider {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid #121212;
+}
+
+/* line 175, ../sass/main.scss */
+.devider-form {
+  margin: 10px 0px;
+}
+
+/* line 181, ../sass/main.scss */
+#bayPredict {
+  color: #69defc;
+}
+/* line 183, ../sass/main.scss */
+#bayPredict strong {
+  color: white;
+}
+
+/* line 189, ../sass/main.scss */
+#searchform {
+  display: none;
+}
+
+/* line 195, ../sass/main.scss */
+.fadeOut {
+  opacity: 0;
+}
+
+/* line 199, ../sass/main.scss */
+.hidden {
+  display: none;
+}
+
+/* line 203, ../sass/main.scss */
+button {
+  margin-top: 10px;
+}
+
+/* MAPBOX OVERRIDES */
+/* line 211, ../sass/main.scss */
+.leaflet-popup-content {
+  background: transparent;
+  border-color: transparent;
+  padding: 0px;
+  color: white;
+  font-size: 12px;
+}
+/* line 217, ../sass/main.scss */
+.leaflet-popup-content .bayLinksInfo:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 222, ../sass/main.scss */
+.leaflet-popup-close-button {
+  display: none;
+}
+
+/* line 225, ../sass/main.scss */
+.leaflet-popup-content-wrapper {
+  background: transparent;
+  border-color: transparent;
+  padding: 0px;
+}
+
+/* line 230, ../sass/main.scss */
+.leaflet-popup-tip {
+  border-top: 10px solid #39b3d7;
+  margin-top: -1px;
+}
+
+/* line 234, ../sass/main.scss */
+.leaflet-control-geosearch {
+  display: none;
+}
+
+/* line 241, ../sass/main.scss */
+.popup_data {
+  display: none;
+  background: white;
+  color: #333;
+  padding: 5px;
+  border-radius: 3px;
+  line-height: normal;
+  border: 1px solid #39b3d7;
+}
