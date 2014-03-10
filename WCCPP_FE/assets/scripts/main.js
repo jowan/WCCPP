@@ -17,6 +17,7 @@ var mapme;
 var get_nearby;
 var circleLayer = false;
 var bowday = false;
+var backEndUrl = "http://109.203.111.251/~iotbay/apps/pp/services/services.php";
 
 /* =========================================================================================
  *  LET'S GO - ON PAGE LOAD
@@ -88,8 +89,14 @@ $(function() {
 	    messageDefaults: {
 	    	hideAfter: 2
 	    }
-	}	
-
+	}
+ 
+/* =========================================================================================
+ *  IMPLEMENTS selectpicker - BOOTSTRAP selectpicker
+ * ========================================================================================= */
+    
+    $('.selectpicker').selectpicker();
+   
 /* =========================================================================================
  *
  *
@@ -113,7 +120,7 @@ $(function() {
 			progressMessage: 'Fetching bays'
 		}, {
 			//<!-- BACKEND LOCATION -->//
-		    url      : "http://dev_backend/WCCPP_BE/PS/services/services.php",
+		    url      : backEndUrl,
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
 		    jsonp    : "callback",
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
@@ -184,7 +191,7 @@ $(function() {
 				progressMessage : 'Fetching transactions'
 			}, {
 				//<!-- BACKEND LOCATION -->//
-			    url      : "http://dev_backend/WCCPP_BE/PS/services/services.php",
+			    url      : backEndUrl,
 			    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
 			    jsonp    : "callback",
 			    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
@@ -240,7 +247,7 @@ $(function() {
 			progressMessage : 'Fetching bay info'
 		}, {
 			//<!-- BACKEND LOCATION -->//
-		    url		 : "http://dev_backend/WCCPP_BE/PS/services/services.php",
+		    url		 : backEndUrl,
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
 		    jsonp    : "callback",
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
@@ -285,7 +292,7 @@ $(function() {
 			progressMessage : 'Calculating bay occupancy'
 		}, {
 			//<!-- BACKEND LOCATION -->//
-		    url      : "http://dev_backend/WCCPP_BE/PS/services/services.php",
+		    url      : backEndUrl,
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
 		    jsonp    : "callback",
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
@@ -364,7 +371,7 @@ $(function() {
 			progressMessage : 'Fetching bay info'
 		}, {
 			//<!-- BACKEND LOCATION -->//
-		    url		 : "http://dev_backend/WCCPP_BE/PS/services/services.php",
+		    url		 : backEndUrl,
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//
 		    jsonp    : "callback",
 		    //<!-- IGNORE BUT NEEDED FOR JSONP -->//

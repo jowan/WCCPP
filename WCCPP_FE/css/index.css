@@ -41,7 +41,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -112,4 +111,30 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+.btn-group>.btn:first-child {
+    margin-left: 0;
+    background: white;
+    font-size: 12px;
+    color: rgb(83, 83, 83);
+    margin-top: 0px;
+}
+
+.bootstrap-select.btn-group .dropdown-menu li>a {
+    color: rgb(83, 83, 83);
+	font-size: 12px;
+}
+
+.dropdown-toggle.btn-default {
+	border: none;
+}
+
+.input-sm {
+	border: none;
+}
+
+h2{
+    font-size:22px;
+    text-align:left;
 }

@@ -38,8 +38,8 @@ var Lmap = {
         
         //<!-- Create the map object into our global -->//
         //Lmap.map = L.mapbox.map('map', 'examples.h186knp8')
-        //Lmap.map = L.mapbox.map('map', 'eveningscode.map-jy3mprc0')
-        Lmap.map = L.mapbox.map('map', 'eveningscode.map-exqe556o')
+        Lmap.map = L.mapbox.map('map', 'eveningscode.map-jy3mprc0')
+        //Lmap.map = L.mapbox.map('map', 'eveningscode.map-exqe556o')
         	.setView([Lmap.initLat, Lmap.initLon], Lmap.scale);
         
         //<!-- Add each feature to a cluster, then add the layer -->//
