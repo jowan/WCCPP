@@ -341,7 +341,7 @@ $(function() {
 					            marker.openPopup();
 					            $("#datagroup_"+bayid).html(mkp);
 					            $("#btngroup_"+bayid).hide();
-					            $("#datagroup_"+bayid).show();
+					            $("#datagroup_"+bayid).fadeIn();
 					        }
 					    });
 				  	}
@@ -468,7 +468,7 @@ $(function() {
 			xkey: 'time',
 			ykeys: cnt_array,
 			labels: dates,
-			hideHover: true
+			hideHover: 'always'
 		});
 		//<!-- IMPLEMENTS messenger.js - SUCCESS MESSGE -->//
 		Messenger().post({
@@ -665,13 +665,21 @@ $(function() {
 	});
 
 /* =========================================================================================
- *  MENU BLCOK CLICK - OPENS MIDDLE BLOCK - USES TABS TO GO TO CORRECT AREA
+ *  MENU BLOCK CLICK - OPENS MIDDLE BLOCK - USES TABS TO GO TO CORRECT AREA
  * ========================================================================================= */
 
 	$('#menublock').click(function(){
 		open_mdb();
 	});
 
+/* =========================================================================================
+ *  MENU BLOCK CLICK - CLOSES MIDDLE BLOCK
+ * ========================================================================================= */
+
+	$('#closeMDB').click(function(){
+		close_mdb();
+	});
+	
 /* =========================================================================================
  *  CHART CLOSE BUTTON CLICK - CLOSE CHART
  * ========================================================================================= */
