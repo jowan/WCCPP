@@ -2,7 +2,7 @@
  *
  *
  *
- *  MAIN JS FILE - TO BE BROKEN DOWN !
+ *  MAIN JS FILE
  *
  *
  *
@@ -626,6 +626,7 @@ $(function() {
 			$('#searchLng').val('');
 			$('#searchLat').val('');
 			$('#searchPostcode').val('');
+            
 			//<!-- MAKE BAY INPUT BAY ID FROM MARKER -->//
 			$('#searchBay').val(bay);
 
