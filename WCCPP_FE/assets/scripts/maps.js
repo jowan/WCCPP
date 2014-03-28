@@ -57,11 +57,13 @@ var Lmap = {
         //Lmap.map = L.mapbox.map('map', 'eveningscode.map-exqe556o')
         	.setView([Lmap.initLat, Lmap.initLon], Lmap.scale);
         
+        
+        
         //<!-- Add each feature to a cluster, then add the layer -->//
         Lmap.markers = L.markerClusterGroup({
             disableClusteringAtZoom: 17
         }).addTo(Lmap.map);
-        
+       
         //<!-- Add each feature to our layer, then add the layer -->//
         L.geoJson(geoJsonData, {
             pointToLayer: L.mapbox.marker.style,

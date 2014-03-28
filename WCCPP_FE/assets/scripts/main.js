@@ -315,14 +315,13 @@ $(function() {
 			  	}else{
 			  		if(infoDest == 'mdb'){
 			  			//<!-- MARKUP MIDDLE BLOCK -->//
-					  	var mkp = '<h4>Now</h4>';
+						var mkp = '<h4>Now</h4>';
 					  	mkp += "<div>This bay has <strong>"+rdata[1]+"</strong> spaces.</div>";
 					  	if(rdata[0] == 1){
 							mkp += "<div>We predict <strong>1</strong> space will be occupied.</div>";
 					  	}else{
 					  		mkp += "<div>We predict <strong>"+rdata[0]+"</strong> spaces will be occupied.</div>";
-					  	}
-					  	//<!-- MARKUP TO DIV, OPEN PANEL, LOAD INFO VIA Ajax -->//
+					  	}					  	//<!-- MARKUP TO DIV, OPEN PANEL, LOAD INFO VIA Ajax -->//
 				  		$('#bayPredict').html(mkp);
 				  		open_bay_info_panel();
 				  		AJAX_GetBayInfo();
@@ -331,13 +330,12 @@ $(function() {
 						Lmap.markers.eachLayer(function(marker) {
 					        if (marker.feature.properties.key == bayid) {
 					        	//<!-- MARKUP FOR POPUP DATA DIV -->//
-							    var mkp = "<div>This bay has <strong>"+rdata[1]+"</strong> spaces.</div>";
+								var mkp = "<div>This bay has <strong>"+rdata[1]+"</strong> spaces.</div>";
 							  	if(rdata[0] == 1){
 									mkp += "<div>We predict <strong>1</strong> space will be occupied at <strong>"+time_nice+"</strong> on <strong>"+date_nice+"</strong></div>";
 							  	}else{
 							  		mkp += "<div>We predict <strong>"+rdata[0]+"</strong> spaces will be occupied at <strong>"+time_nice+"</strong> on <strong>"+date_nice+"</strong></div>";
-							  	}
-							  	//<!-- OPEN POPUP, HIDE BUTTONS, SHOW DATA DIV -->//
+							  	}							  	//<!-- OPEN POPUP, HIDE BUTTONS, SHOW DATA DIV -->//
 					            marker.openPopup();
 					            $("#datagroup_"+bayid).html(mkp);
 					            $("#btngroup_"+bayid).hide();

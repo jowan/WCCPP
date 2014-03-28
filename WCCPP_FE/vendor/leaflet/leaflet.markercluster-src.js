@@ -863,8 +863,9 @@ L.MarkerClusterGroup = L.FeatureGroup.extend({
 
 	//Gets the maps visible bounds expanded in each direction by the size of the screen (so the user cannot see an area we do not cover in one pan)
 	_getExpandedVisibleBounds: function () {
+        
 		if (!this.options.removeOutsideVisibleBounds) {
-			return this.getBounds();
+			return this._map.getBounds();
 		}
 
 		var map = this._map,
@@ -872,11 +873,11 @@ L.MarkerClusterGroup = L.FeatureGroup.extend({
 			sw = bounds._southWest,
 			ne = bounds._northEast,
 			latDiff = L.Browser.mobile ? 0 : Math.abs(sw.lat - ne.lat),
-			lngDiff = L.Browser.mobile ? 0 : Math.abs(sw.lng - ne.lng);
-
+			lngDiff = L.Browser.mobile ? 0 : Math.abs(sw.lng - ne.lng);        
+        
 		return new L.LatLngBounds(
-			new L.LatLng(sw.lat - latDiff, sw.lng - lngDiff, true),
-			new L.LatLng(ne.lat + latDiff, ne.lng + lngDiff, true));
+			new L.LatLng(sw.lat - latDiff - 0.005, sw.lng - lngDiff - 0.005, true),
+			new L.LatLng(ne.lat + latDiff + 0.005, ne.lng + lngDiff + 0.005, true));
 	},
 
 	//Shared animation code

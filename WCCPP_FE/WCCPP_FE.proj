@@ -8,11 +8,13 @@
     <IsRunnable>true</IsRunnable>
     <FrameworkVersion>3.2.0</FrameworkVersion>
     <AndroidPermissions>android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.INTERNET</AndroidPermissions>
-    <CorePlugins>org.apache.cordova.device;org.apache.cordova.device-orientation;org.apache.cordova.geolocation;org.apache.cordova.splashscreen</CorePlugins>
+    <CorePlugins>org.apache.cordova.device;org.apache.cordova.device-orientation;org.apache.cordova.geolocation</CorePlugins>
     <DeviceOrientations>Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>True</AndroidHardwareAcceleration>
     <BundleVersion>1.0</BundleVersion>
+    <DisplayName />
+    <iOSDisplayName />
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>

@@ -138,3 +138,26 @@ h2{
     font-size:22px;
     text-align:left;
 }
+
+
+.popup_data{
+    background: #39b3d7;
+    font-size: 20px;
+    color: white;    
+}
+
+#spaces_occ{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    border-right: 1px solid white;
+}
+
+#spaces_count{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+.result{
+    width:80px;
+}
