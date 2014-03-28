@@ -341,7 +341,7 @@ button {
   display: none;
 }
 
-/* line 279, ../sass/main.scss */
+/* line 276, ../sass/main.scss */
 .popup_data {
   display: none;
   background: white;
@@ -350,4 +350,15 @@ button {
   border-radius: 3px;
   line-height: normal;
   border: 1px solid #39b3d7;
+}
+
+/* line 287, ../sass/main.scss */
+.input-sm {
+  border: none;
+}
+
+/* line 291, ../sass/main.scss */
+h2 {
+  font-size: 22px;
+  text-align: left;
 }

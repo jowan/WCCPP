@@ -273,9 +273,6 @@ button {
   display: none;
 }
 
-.popup_buttons{
-
-}
 .popup_data{
   display: none;
   background: white;
@@ -284,4 +281,14 @@ button {
   border-radius: 3px;
   line-height: normal;
   border: 1px solid #39b3d7;
+}
+
+
+.input-sm {
+  border: none;
+}
+
+h2{
+    font-size:22px;
+    text-align:left;
 }
